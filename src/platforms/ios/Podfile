@@ -1,1 +1,1 @@
-pod "VolumeBar", :git => "https://github.com/BallisticPain/VolumeBar.git"
+pod "LxVolumeManager"
