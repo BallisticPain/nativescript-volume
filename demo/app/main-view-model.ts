@@ -9,6 +9,25 @@ export class HelloWorldModel extends Observable {
     super();
 
     this.volume = new Volume();
-    this.message = this.volume.message;
+  }
+
+  mute() {
+    this.volume.mute();
+  }
+
+  unmute() {
+    this.volume.unmute();
+  }
+
+  volumeUp() {
+    this.volume.volumeUp();
+  }
+
+  volumeHalf() {
+    this.volume.setVolume(0.5);
+  }
+
+  volumeDown() {
+    this.volume.volumeDown();
   }
 }

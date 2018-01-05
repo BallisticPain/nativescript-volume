@@ -1,6 +1,11 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
-  xmlns:ui="nativescript-volume">
+  xmlns:volume="nativescript-volume">
   <StackLayout class="p-20">
-    <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
+    <volume:Volume></volume:Volume>
+    <Button text="Mute" tap="{{ mute }}"/>
+    <Button text="Unmute" tap="{{ unmute }}"/>
+    <Button text="Volume Up" tap="{{ volumeUp }}"/>
+    <Button text="Volume Down" tap="{{ volumeDown }}"/>
+    <Button text="Set Volume to 50%" tap="{{ volumeHalf }}"/>
   </StackLayout>
 </Page>
