@@ -1,7 +1,7 @@
 {
     "name": "nativescript-volume",
-    "version": "1.0.0",
-    "description": "Your awesome NativeScript plugin.",
+    "version": "1.0.3",
+    "description": "NativeScript plugin that allows you to programmatically change the device volume.",
     "main": "volume",
     "typings": "index.d.ts",
     "nativescript": {
@@ -28,13 +28,18 @@
     },
     "keywords": [
         "NativeScript",
+        "Volume",
+        "Volume Management",
+        "Programmatically Change Volume",
         "JavaScript",
+        "TypeScript",
+        "Plugin",
         "Android",
         "iOS"
     ],
     "author": {
-        "name": "Your Name",
-        "email": "youremail@yourdomain.com"
+        "name": "Jarvis (BallisticPain) Stubblefield",
+        "email": "jarvis@vortexrevolutions.com"
     },
     "bugs": {
         "url": "https://github.com/BallisticPain/nativescript-volume/issues"
