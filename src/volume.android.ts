@@ -13,21 +13,21 @@ export class Volume extends Common {
   public mute(): void {
     // Need the ADJUST_MUTE constant
     // this._audioManager.adjustVolume(this.AudioManager.ADJUST_MUTE, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
-    this._audioManager.adjustVolume(-100, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
+    this._audioManager.adjustVolume(-100, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE & this.AudioManager.FLAG_SHOW_UI);
   }
 
   public unmute(): void {
     // Need the ADJUST_UNMUTE constant
     // this._audioManager.adjustVolume(this.AudioManager.ADJUST_UNMUTE, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
-    this._audioManager.adjustVolume(100, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
+    this._audioManager.adjustVolume(100, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE & this.AudioManager.FLAG_SHOW_UI);
   }
 
   public volumeDown() {
-    this._audioManager.adjustVolume(this.AudioManager.ADJUST_LOWER, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
+    this._audioManager.adjustVolume(this.AudioManager.ADJUST_LOWER, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE & this.AudioManager.FLAG_SHOW_UI);
   }
 
   public volumeUp() {
-    this._audioManager.adjustVolume(this.AudioManager.ADJUST_RAISE, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
+    this._audioManager.adjustVolume(this.AudioManager.ADJUST_RAISE, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE & this.AudioManager.FLAG_SHOW_UI);
   }
 
   public getVolume(): number {
@@ -35,6 +35,6 @@ export class Volume extends Common {
   }
 
   public setVolume(value: number) {
-    this._audioManager.setStreamVolume(this.AudioManager.STREAM_MUSIC, value, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
+    this._audioManager.setStreamVolume(this.AudioManager.STREAM_MUSIC, value, this.AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE & this.AudioManager.FLAG_SHOW_UI);
   }
 }
