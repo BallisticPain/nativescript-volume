@@ -8,7 +8,7 @@ export class Common extends Observable {
     super();
   }
 
-  public getVolume() { }
+  public getVolume(): number { return null; }
   public mute() { }
   public setVolume(value: number) { }
   public unmute() { }
