@@ -1,8 +1,8 @@
 import { Observable } from 'tns-core-modules/data/observable';
 import { Volume } from 'nativescript-volume';
+import * as app from 'tns-core-modules/application';
 
 export class HelloWorldModel extends Observable {
-  public message: string;
   private volume: Volume;
 
   constructor() {
@@ -24,10 +24,18 @@ export class HelloWorldModel extends Observable {
   }
 
   volumeHalf() {
-    this.volume.setVolume(0.5);
+    if (app.ios) {
+      this.volume.setVolume(0.5);
+    } else if (app.android) {
+      this.volume.setVolume(7);
+    }
   }
 
   volumeDown() {
     this.volume.volumeDown();
+  }
+
+  getVolume() {
+    alert('Volume is: "' + this.volume.getVolume() + '"');
   }
 }
