@@ -1,40 +1,88 @@
-# Your Plugin Name
+# NativeScript-Volume
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
-
-Then describe what's the purpose of your plugin. 
-
-In case you develop UI plugin, this is where you can add some screenshots.
-
-## (Optional) Prerequisites / Requirements
-
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
+This plugin allows you to programmatically control the volume in a NativeScript application. This is compatible with both iOS and Android.
 
 ## Installation
 
-Describe your plugin installation steps. Ideally it would be something like:
+Run the following command from the root of your project:
 
 ```javascript
-tns plugin add <your-plugin-name>
+tns plugin add nativescript-volume
 ```
+
+This command automatically installs the necessary files, as well as stores nativescript-volume as a dependency in your project's package.json file.
 
 ## Usage 
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
-	
-	```javascript
-    Usage code snippets here
-    ```)
+This plugin can be used with any flavor of NativeScript (Core, Angular, Vue, TypeScript, and/or JavaScript).
+
+#### TypeScript
+```TypeScript
+import { Volume } from 'nativescript-volume';
+
+export SomeClass {
+  private volume: Volume;
+
+  constructor() {
+    this.volume = new Volume();
+  }
+
+  mute() {
+    this.volume.mute();
+  }
+
+  unmute() {
+    this.volume.unmute();
+  }
+
+  volumeUp() {
+    this.volume.volumeUp();
+  }
+
+  volumeHalf() {
+    if (app.ios) {
+      // iOS Volume goes from 0 to 1. With its increments being 1/16.
+      this.volume.setVolume(0.5);
+    } else if (app.android) {
+      // Android Volume I'm unsure of the range, but believe it to be 0 to 15.
+      this.volume.setVolume(7);
+    }
+  }
+
+  volumeDown() {
+    this.volume.volumeDown();
+  }
+
+  getVolume() {
+    alert('Volume is' + this.volume.getVolume());
+  }
+}
+```
 
 ## API
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
-| Property | Default | Description |
-| --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
+`mute(): void`
+  * Mutes the volume of the Device
+
+`unmute(): void`
+  * Unmutes the volume of the Device
+
+`volumeDown(): void`
+  * Decreases the volume of the Device. 
+  * **Android Note:** This does not specify a specific stream so it allows the device pick the active sound stream.
+
+`volumeUp(): void`
+  * Increases the volume of the Device. 
+  * **Android Note:** This does not specify a specific stream so it allows the device pick the active sound stream.
+
+`getVolume(): number`
+  * Gets the current volume of the Device.
+  * **Android TODO** This currently only gets the music stream's volume.
+
+`setVolume(value: number): void`
+  * Sets the current volume of the Device.
+  * **Android TODO** This currently only sets the music stream's volume.
     
 ## License
 
-Apache License Version 2.0, January 2004
+The MIT License
