@@ -44,7 +44,7 @@
     "bugs": {
         "url": "https://github.com/BallisticPain/nativescript-volume/issues"
     },
-    "license": "Apache-2.0",
+    "license": "The MIT License",
     "homepage": "https://github.com/BallisticPain/nativescript-volume",
     "readmeFilename": "README.md",
     "devDependencies": {
