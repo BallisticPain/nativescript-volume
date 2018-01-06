@@ -1,6 +1,6 @@
 {
     "name": "nativescript-volume",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "NativeScript plugin that allows you to programmatically change the device volume.",
     "main": "volume",
     "typings": "index.d.ts",
@@ -44,7 +44,7 @@
     "bugs": {
         "url": "https://github.com/BallisticPain/nativescript-volume/issues"
     },
-    "license": "The MIT License",
+    "license": "MIT",
     "homepage": "https://github.com/BallisticPain/nativescript-volume",
     "readmeFilename": "README.md",
     "devDependencies": {
