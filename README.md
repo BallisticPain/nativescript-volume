@@ -44,7 +44,7 @@ export SomeClass {
       // iOS Volume goes from 0 to 1. With its increments being 1/16.
       this.volume.setVolume(0.5);
     } else if (app.android) {
-      // Android Volume I'm unsure of the range, but believe it to be 0 to 15.
+      // Android Volume I'm unsure of the range, but believe it to be 0 to 15 at least for the music stream.
       this.volume.setVolume(7);
     }
   }
@@ -54,6 +54,7 @@ export SomeClass {
   }
 
   getVolume() {
+    // Please see Android TODO in the Api Section
     alert('Volume is' + this.volume.getVolume());
   }
 }
