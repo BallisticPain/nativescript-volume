@@ -62,27 +62,14 @@ export SomeClass {
 
 ## API
 
-`mute(): void`
-  * Mutes the volume of the Device
-
-`unmute(): void`
-  * Unmutes the volume of the Device
-
-`volumeDown(): void`
-  * Decreases the volume of the Device. 
-  * **Android Note:** This does not specify a specific stream so it allows the device pick the active sound stream.
-
-`volumeUp(): void`
-  * Increases the volume of the Device. 
-  * **Android Note:** This does not specify a specific stream so it allows the device pick the active sound stream.
-
-`getVolume(): number`
-  * Gets the current volume of the Device.
-  * **Android TODO** This currently only gets the music stream's volume.
-
-`setVolume(value: number): void`
-  * Sets the current volume of the Device.
-  * **Android TODO** This currently only sets the music stream's volume.
+| Method: ReturnType | Description | Notes |
+| ------------------ | ----------- | ----- |
+| `mute(): void` | Mutes the volume of the Device | 
+| `unmute(): void` | Unmutes the volume of the Device | 
+| `volumeDown(): void` | Decreases the volume of the Device. | **Android** The device picks the active sound stream.
+| `volumeUp(): void` | Increases the volume of the Device. | **Android** The device picks the active sound stream.
+| `getVolume(): number` | Gets the current volume of the Device. | **Android** This currently only gets the music stream's volume.
+| `setVolume(value: number): void` | Sets the current volume of the Device. | **Android** This currently only sets the music stream's volume.
     
 ## License
 
